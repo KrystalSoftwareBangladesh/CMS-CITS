@@ -1,3 +1,4 @@
+<!-- App.vue -->
 <script setup lang="ts">
 import { RouterView } from "vue-router";
 import NavBarComponent from "./components/common/NavBarComponent.vue";

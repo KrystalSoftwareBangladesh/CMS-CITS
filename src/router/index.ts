@@ -1,3 +1,4 @@
+// router/index.ts
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 // import DashboardView from "@/views/DashboardView.vue";

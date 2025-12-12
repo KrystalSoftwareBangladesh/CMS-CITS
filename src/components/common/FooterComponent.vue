@@ -46,8 +46,6 @@ const props = defineProps({
   maxRightColumns: { type: Number, default: 4 },
 });
 
-const year = new Date().getFullYear();
-
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
@@ -135,6 +133,4 @@ const rightGridTemplate = computed(() => `repeat(${rightColsCount.value}, minmax
 </template>
 
 <style scoped>
-/* nothing color-specific here; keep visuals neutral.
-   You can set `color` or add Tailwind color utilities where you render this component. */
 </style>
