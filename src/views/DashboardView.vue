@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-50">
-    <NavBar />
+    <TopNavBarComponent />
     <div class="flex">
       <SideBar />
       <main class="flex-1 p-6 lg:ml-64">
@@ -70,7 +70,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import NavBar from '@/components/common/NavBarComponent.vue'
+import TopNavBarComponent from '@/components/common/TopNavBarComponent.vue'
 import SideBar from '@/components/common/SideBar.vue'
 import Footer from '@/components/common/FooterComponent.vue'
 import StatsCard from '@/components/StatsCard.vue'

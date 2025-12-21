@@ -1,13 +1,15 @@
 <!-- App.vue -->
 <script setup lang="ts">
 import { RouterView } from "vue-router";
-import NavBarComponent from "./components/common/NavBarComponent.vue";
+import TopNavBarComponent from "./components/common/TopNavBarComponent.vue";
+import HorizontalMenuBar from "./components/common/HorizontalMenuBar.vue";
 import FooterComponent from "./components/common/FooterComponent.vue";
 </script>
 
 <template>
   <div id="app" class="min-h-screen flex flex-col">
-    <NavBarComponent />
+    <TopNavBarComponent />
+    <HorizontalMenuBar />
     <main class="flex-1 box-border pt-16 pb-14 overflow-auto">
       <RouterView />
     </main>
