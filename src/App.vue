@@ -9,10 +9,15 @@ import FooterComponent from "./components/common/FooterComponent.vue";
 <template>
   <div id="app" class="min-h-screen flex flex-col">
     <TopNavBarComponent />
-    <HorizontalMenuBar />
-    <main class="flex-1 box-border pt-16 pb-14 overflow-auto">
-      <RouterView />
-    </main>
+    <div class="pt-16">
+      <!-- Horizontal Menu -->
+      <HorizontalMenuBar />
+
+      <!-- Main Content -->
+      <main class="flex-1 box-border pb-14 overflow-auto">
+        <RouterView />
+      </main>
+    </div>
     <FooterComponent />
   </div>
 </template>

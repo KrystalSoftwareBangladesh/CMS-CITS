@@ -31,10 +31,12 @@ const activeKey = ref<string>('home')
 
 const menuItems: MenuItem[] = [
   { key: 'home', label: 'Home', route: '/' },
+  { key: 'about', label: 'About', route: '/about' },
   { key: 'dashboard', label: 'Dashboard', route: '/dashboard' },
   { key: 'content', label: 'Content', route: '/content' },
   { key: 'media', label: 'Media', route: '/media' },
   { key: 'users', label: 'Users', route: '/users' },
+  { key: 'contact', label: 'Contact', route: '/contact' },
   { key: 'settings', label: 'Settings', route: '/settings' },
 ]
 
