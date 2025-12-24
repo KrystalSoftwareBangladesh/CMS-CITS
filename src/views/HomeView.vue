@@ -2,6 +2,13 @@
 <script setup lang="ts">
 // import BannerComponent from '@/components/BannerComponent.vue';
 import HeroBanner from '@/components/common/HeroBanner.vue'
+import StatsSection from '@/components/home/StatsSection.vue';
+import ServicesPreview from '@/components/home/ServicesPreview.vue';
+import WhyUsSection from '@/components/home/WhyUsSection.vue';
+import ProcessSection from '@/components/home/ProcessSection.vue';
+import FeaturedWork from '@/components/home/FeaturedWork.vue';
+import TestimonialsSection from '@/components/home/TestimonialsSection.vue';
+import FinalCTA from '@/components/home/FinalCTA.vue';
 // import SectionTitle from '@/components/SectionTitle.vue';
 // import ServiceCard from '@/components/ServiceCard.vue';
 
@@ -30,7 +37,7 @@ import HeroBanner from '@/components/common/HeroBanner.vue'
   <main>
     <HeroBanner />
     <!-- <BannerComponent /> -->
-     <!-- <section class="bg-slate-900 py-16">
+    <!-- <section class="bg-slate-900 py-16">
       <SectionTitle
         title="OUR PRODUCTS & SERVICES"
         subtitle="A secure, compliant, high-performance platform for your needs."
@@ -44,5 +51,12 @@ import HeroBanner from '@/components/common/HeroBanner.vue'
             :description="service.description" :icon="service.icon" :cta-text="service.ctaText" />
         </div>
       </section> -->
+    <StatsSection />
+    <ServicesPreview />
+    <WhyUsSection />
+    <ProcessSection />
+    <FeaturedWork />
+    <TestimonialsSection />
+    <FinalCTA />
   </main>
 </template>
