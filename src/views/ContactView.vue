@@ -1,129 +1,139 @@
 <template>
-  <section class="max-w-5xl mx-auto px-4 py-12">
-    <!-- Header -->
-    <div class="text-center mb-10">
-      <h1 class="text-3xl font-bold text-gray-900">Contact Us</h1>
-      <p class="mt-3 text-gray-600">
-        Have a question or need help? Fill out the form and we’ll get back to you.
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- HERO -->
+    <section class="pt-32 pb-20 text-center">
+      <div class="inline-flex items-center gap-2
+               px-4 py-1.5 rounded-full
+               bg-gray-100 text-sm text-gray-600">
+        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+        Get in Touch
+      </div>
+
+      <h1 class="mt-6 text-4xl sm:text-5xl font-extrabold text-gray-900">
+        Let’s Talk About
+        <span class="relative inline-block ml-2">
+          <span class="relative z-10 px-2">Your Project</span>
+          <span class="absolute inset-0 bg-yellow-200 rounded-lg -z-0"></span>
+        </span>
+      </h1>
+
+      <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+        Whether you need video editing, photo editing, or a full creative
+        strategy — we’re here to help.
       </p>
-    </div>
+    </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Contact Info -->
-      <div class="space-y-6">
+    <!-- CONTACT + FORM -->
+    <section class="pb-20 grid lg:grid-cols-2 gap-12">
+      <!-- LEFT -->
+      <div class="space-y-8">
         <div>
-          <h2 class="text-lg font-semibold text-gray-800">Our Office</h2>
-          <p class="mt-2 text-gray-600">
-            123 CMS Street<br />
-            Dhaka, Bangladesh
+          <h2 class="text-2xl font-bold text-gray-900">
+            Contact Information
+          </h2>
+          <p class="mt-3 text-gray-600">
+            Reach out directly or leave us a message — we usually reply within 24 hours.
           </p>
         </div>
 
-        <div>
-          <h2 class="text-lg font-semibold text-gray-800">Email</h2>
-          <p class="mt-2 text-gray-600">support@cms.com</p>
+        <div class="space-y-6">
+          <InfoItem icon="📧" title="Email" value="hello@yourcompany.com" />
+          <InfoItem icon="📞" title="Phone" value="+880 1234 567 890" />
+          <InfoItem icon="📍" title="Location" value="Dhaka, Bangladesh — Serving clients worldwide" />
         </div>
 
-        <div>
-          <h2 class="text-lg font-semibold text-gray-800">Phone</h2>
-          <p class="mt-2 text-gray-600">+880 1234 567890</p>
-        </div>
-
-        <div>
-          <h2 class="text-lg font-semibold text-gray-800">Working Hours</h2>
-          <p class="mt-2 text-gray-600">
-            Sunday – Thursday<br />
-            9:00 AM – 6:00 PM
+        <!-- QUICK CTA -->
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-gray-900">
+            Prefer a quick call?
+          </h3>
+          <p class="mt-2 text-sm text-gray-600">
+            Book a free 15-minute call and let’s discuss your goals.
           </p>
+
+          <button class="mt-4 px-6 py-2.5 rounded-full
+                   bg-yellow-400 hover:bg-yellow-500
+                   text-sm font-semibold transition">
+            Book a Free Call
+          </button>
         </div>
       </div>
 
-      <!-- Contact Form -->
-      <form class="bg-white border border-gray-200 rounded-lg p-6 space-y-5" @submit.prevent="handleSubmit">
-        <div>
-          <label class="block text-sm font-medium text-gray-700">
-            Full Name
-          </label>
-          <input v-model="form.name" type="text" required
-            class="mt-1 w-full rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500" />
-        </div>
+      <!-- RIGHT: FORM -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-8">
+        <h2 class="text-2xl font-bold text-gray-900">
+          Send Us a Message
+        </h2>
 
-        <div>
-          <label class="block text-sm font-medium text-gray-700">
-            Email Address
-          </label>
-          <input v-model="form.email" type="email" required
-            class="mt-1 w-full rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500" />
-        </div>
+        <!-- <form class="mt-6 space-y-5" @submit.prevent="submit">
+          <FormInput label="Full Name" v-model="form.name" required />
+          <FormInput label="Email Address" type="email" v-model="form.email" required />
+          <FormInput label="Subject" v-model="form.subject" />
+          <FormTextarea label="Message" v-model="form.message" required />
 
-        <div>
-          <label class="block text-sm font-medium text-gray-700">
-            Subject
-          </label>
-          <input v-model="form.subject" type="text"
-            class="mt-1 w-full rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500" />
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium text-gray-700">
-            Message
-          </label>
-          <textarea v-model="form.message" rows="4" required
-            class="mt-1 w-full rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500" />
-        </div>
-
-        <div class="pt-2">
-          <button type="submit" :disabled="loading" class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium rounded-lg
-                   text-white bg-blue-600 hover:bg-blue-700 transition disabled:opacity-50">
+          <button type="submit" :disabled="loading" class="w-full py-3 rounded-full
+                   bg-black text-white
+                   text-sm font-semibold
+                   hover:bg-gray-800 transition
+                   disabled:opacity-50">
             {{ loading ? 'Sending...' : 'Send Message' }}
           </button>
-        </div>
-      </form>
-    </div>
-  </section>
+        </form> -->
+        <form class="mt-6 space-y-5" @submit.prevent="submit">
+          <FormInput label="Full Name" v-model="form.name" required />
+
+          <FormInput label="Email Address" type="email" v-model="form.email" required />
+
+          <FormInput label="Subject" v-model="form.subject" />
+
+          <FormTextArea label="Message" v-model="form.message" required />
+
+          <button type="submit" :disabled="loading" class="w-full py-3 rounded-full
+           bg-black text-white
+           text-sm font-semibold
+           hover:bg-gray-800 transition
+           disabled:opacity-50">
+            {{ loading ? 'Sending...' : 'Send Message' }}
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- MAP + CALENDAR -->
+    <section class="pb-24 grid lg:grid-cols-2 gap-12">
+      <!-- MAP -->
+      <div class="rounded-2xl overflow-hidden border border-gray-200">
+        <iframe title="Google Map" class="w-full h-[380px]" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Dhaka%20Bangladesh&output=embed" />
+      </div>
+
+      <!-- CALENDAR -->
+      <div class="rounded-2xl overflow-hidden border border-gray-200 bg-white">
+        <iframe title="Schedule a Call" class="w-full h-[380px]" src="https://calendly.com/acmeschedule/15min" />
+      </div>
+    </section>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 
-interface ContactForm {
-  name: string
-  email: string
-  subject: string
-  message: string
-}
+import FormInput from '@/components/contact/FormInput.vue'
+import FormTextArea from '@/components/contact/FormTextArea.vue'
+import InfoItem from '@/components/contact/InfoItem.vue'
 
 const loading = ref(false)
 
-const form = reactive<ContactForm>({
+const form = reactive({
   name: '',
   email: '',
   subject: '',
   message: '',
 })
 
-const handleSubmit = async (): Promise<void> => {
+const submit = async () => {
   loading.value = true
-
-  try {
-    // TODO: Replace with API call
-    console.log('Contact form submitted:', { ...form })
-
-    // Simulate request
-    await new Promise(resolve => setTimeout(resolve, 1000))
-
-    // Reset form
-    form.name = ''
-    form.email = ''
-    form.subject = ''
-    form.message = ''
-
-    alert('Message sent successfully!')
-  } catch (error) {
-    console.error(error)
-    alert('Something went wrong. Please try again.')
-  } finally {
-    loading.value = false
-  }
+  await new Promise(resolve => setTimeout(resolve, 1000))
+  loading.value = false
 }
 </script>
