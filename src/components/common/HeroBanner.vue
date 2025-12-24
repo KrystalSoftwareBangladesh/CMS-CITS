@@ -1,0 +1,75 @@
+<template>
+  <section class="pt-32 pb-24">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <!-- Eyebrow -->
+      <div class="inline-flex items-center gap-2
+               px-4 py-1.5 rounded-full
+               bg-gray-100 text-sm text-gray-600">
+        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+        What a Story · Video Production Company
+      </div>
+
+      <!-- Headline -->
+      <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl
+               font-extrabold tracking-tight text-gray-900">
+        CREATE A BIGGER
+        <br />
+        IMPACT WITH
+        <span class="relative inline-block">
+          <span class="relative z-10 px-2">
+            VIDEOS
+          </span>
+          <!-- Highlight box -->
+          <span class="absolute inset-0 bg-yellow-200 rounded-lg -z-0"></span>
+        </span>
+      </h1>
+
+      <!-- Description -->
+      <p class="mt-6 max-w-2xl mx-auto
+               text-lg text-gray-600">
+        We help SaaS companies and brands grow faster with
+        conversion-focused video content that actually delivers results.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="mt-8 flex flex-col sm:flex-row
+               items-center justify-center gap-4">
+        <button class="inline-flex items-center gap-2
+                 px-6 py-3 rounded-full
+                 bg-yellow-400 hover:bg-yellow-500
+                 text-sm font-semibold transition">
+          📞 Book a Call
+        </button>
+
+        <button class="inline-flex items-center gap-2
+                 px-6 py-3 rounded-full
+                 bg-gray-100 hover:bg-gray-200
+                 text-sm font-medium text-gray-800 transition">
+          ▶ Understand How
+        </button>
+      </div>
+
+      <!-- Brands -->
+      <div class="mt-14">
+        <p class="text-sm text-gray-500 mb-4">
+          Brands we’ve partnered with
+        </p>
+
+        <div class="flex flex-wrap items-center
+                 justify-center gap-6 opacity-70">
+          <img v-for="(logo, index) in brands" :key="index" :src="logo" class="h-6 object-contain" alt="Brand logo" />
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+const brands: string[] = [
+  'https://dummyimage.com/100x40/ddd/000&text=Envato',
+  'https://dummyimage.com/100x40/ddd/000&text=Deloitte',
+  'https://dummyimage.com/100x40/ddd/000&text=Uber',
+  'https://dummyimage.com/100x40/ddd/000&text=JustCall',
+  'https://dummyimage.com/100x40/ddd/000&text=Shell',
+]
+</script>
