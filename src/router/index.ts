@@ -32,6 +32,14 @@ const router = createRouter({
       },
     },
     {
+      path: '/pricing',
+      name: 'pricing',
+      component: () => import('../views/PricingView.vue'),
+      meta: {
+        title: 'Pricing | CMS',
+      },
+    },
+    {
       path: '/contact',
       name: 'contact',
       component: () => import('../views/ContactView.vue'),
