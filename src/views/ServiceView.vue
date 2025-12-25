@@ -1,27 +1,8 @@
 <template>
   <div class="max-w-7xl mx-auto px-4">
     <!-- HERO -->
-    <section class="pt-32 pb-20 text-center">
-      <div class="inline-flex items-center gap-2
-               px-4 py-1.5 rounded-full
-               bg-gray-100 text-sm text-gray-600">
-        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-        What We Do Best
-      </div>
-
-      <h1 class="mt-6 text-4xl sm:text-5xl font-extrabold text-gray-900">
-        Creative Services That
-        <span class="relative inline-block ml-2">
-          <span class="relative z-10 px-2">Drive Results</span>
-          <span class="absolute inset-0 bg-yellow-200 rounded-lg -z-0"></span>
-        </span>
-      </h1>
-
-      <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
-        From high-impact videos to pixel-perfect photo editing,
-        we help brands tell stories that convert.
-      </p>
-    </section>
+     <PageHero badge="What We Do Best" title="Creative Services That" highlight="Drive Results" description="From high-impact videos to pixel-perfect photo editing,
+    we help brands tell stories that convert." />
 
     <!-- VIDEO SERVICES -->
     <ServiceSection title="Video Editing Services"
@@ -126,6 +107,7 @@
 </template>
 
 <script setup lang="ts">
+import PageHero from '@/components/common/PageHero.vue';
 import ServiceCard from '@/components/service/ServiceCard.vue'
 import ServiceSection from '@/components/service/ServiceSection.vue'
 

@@ -1,27 +1,8 @@
 <template>
   <div class="max-w-7xl mx-auto px-4">
     <!-- HERO -->
-    <section class="pt-32 pb-20 text-center">
-      <div class="inline-flex items-center gap-2
-               px-4 py-1.5 rounded-full
-               bg-gray-100 text-sm text-gray-600">
-        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-        Get in Touch
-      </div>
-
-      <h1 class="mt-6 text-4xl sm:text-5xl font-extrabold text-gray-900">
-        Let’s Talk About
-        <span class="relative inline-block ml-2">
-          <span class="relative z-10 px-2">Your Project</span>
-          <span class="absolute inset-0 bg-yellow-200 rounded-lg -z-0"></span>
-        </span>
-      </h1>
-
-      <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
-        Whether you need video editing, photo editing, or a full creative
-        strategy — we’re here to help.
-      </p>
-    </section>
+    <PageHero badge="Get in Touch" title="Let’s Talk About" highlight="Your Project" description="Whether you need video editing, photo editing, or a full creative
+    strategy — we’re here to help." />
 
     <!-- CONTACT + FORM -->
     <section class="pb-20 grid lg:grid-cols-2 gap-12">
@@ -118,6 +99,7 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 
+import PageHero from '@/components/common/PageHero.vue';
 import FormInput from '@/components/contact/FormInput.vue'
 import FormTextArea from '@/components/contact/FormTextArea.vue'
 import InfoItem from '@/components/contact/InfoItem.vue'

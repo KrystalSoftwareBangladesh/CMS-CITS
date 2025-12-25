@@ -1,29 +1,8 @@
 <template>
   <div class="max-w-7xl mx-auto px-4">
     <!-- HERO -->
-    <section class="pt-32 pb-20 text-center">
-      <div class="inline-flex items-center gap-2
-               px-4 py-1.5 rounded-full
-               bg-gray-100 text-sm text-gray-600">
-        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-        About Our Company
-      </div>
-
-      <h1 class="mt-6 text-4xl sm:text-5xl
-               font-extrabold text-gray-900">
-        We Create Visual Stories
-        <span class="relative inline-block ml-2">
-          <span class="relative z-10 px-2">That Convert</span>
-          <span class="absolute inset-0 bg-yellow-200 rounded-lg -z-0"></span>
-        </span>
-      </h1>
-
-      <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
-        We’re a creative video & photo production company helping brands,
-        startups, and SaaS companies grow through powerful visual storytelling.
-      </p>
-    </section>
-
+     <PageHero badge="About Our Company" title="We Create Visual Stories" highlight="That Convert" description="We’re a creative video & photo production company helping brands,
+    startups, and SaaS companies grow through powerful visual storytelling." />
     <!-- MISSION -->
     <section class="py-20 grid md:grid-cols-2 gap-12 items-center">
       <div>
@@ -143,6 +122,7 @@
 </template>
 
 <script setup lang="ts">
+import PageHero from '@/components/common/PageHero.vue';
 const values = [
   {
     icon: '🎯',

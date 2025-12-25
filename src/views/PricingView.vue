@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import PageHero from '@/components/common/PageHero.vue';
 import PricingCard from '@/components/pricing/PricingCard.vue';
 
 interface PricingPlan {
@@ -57,27 +58,8 @@ const included: string[] = [
 <template>
   <div class="max-w-7xl mx-auto px-4">
     <!-- HERO -->
-    <section class="pt-32 pb-20 text-center">
-      <div class="inline-flex items-center gap-2
-               px-4 py-1.5 rounded-full
-               bg-gray-100 text-sm text-gray-600">
-        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-        Simple & Transparent Pricing
-      </div>
-
-      <h1 class="mt-6 text-4xl sm:text-5xl font-extrabold text-gray-900">
-        Pricing That Fits
-        <span class="relative inline-block ml-2">
-          <span class="relative z-10 px-2">Your Growth</span>
-          <span class="absolute inset-0 bg-yellow-200 rounded-lg -z-0"></span>
-        </span>
-      </h1>
-
-      <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
-        Flexible pricing plans designed for startups, creators,
-        and growing businesses.
-      </p>
-    </section>
+    <PageHero badge="Simple & Transparent Pricing" title="Pricing That Fits" highlight="Your Growth" description="Flexible pricing plans designed for startups, creators,
+    and growing businesses." />
 
     <!-- PRICING CARDS -->
     <section class="pb-20">
