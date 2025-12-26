@@ -66,7 +66,6 @@
       <h2 class="text-3xl font-bold text-gray-900">
         How We Work
       </h2>
-
       <div class="mt-12 grid md:grid-cols-3 gap-8">
         <div v-for="step in process" :key="step.title">
           <div class="text-4xl font-bold text-yellow-400">
@@ -83,25 +82,7 @@
     </section>
 
     <!-- TEAM -->
-    <section class="py-20 bg-gray-50 rounded-2xl">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-gray-900">
-          Meet the Team
-        </h2>
-
-        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-for="member in team" :key="member.name" class="bg-white rounded-xl p-6 border border-gray-200">
-            <img :src="member.avatar" alt="Team member" class="w-20 h-20 rounded-full mx-auto" />
-            <h3 class="mt-4 font-semibold text-gray-900">
-              {{ member.name }}
-            </h3>
-            <p class="text-sm text-gray-500">
-              {{ member.role }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <TeamSection title="Meet the Team" :team="team" />
 
     <!-- CTA -->
     <section class="py-24 text-center">
@@ -111,7 +92,6 @@
       <p class="mt-4 text-gray-600">
         Let’s create something impactful together.
       </p>
-
       <button class="mt-6 px-8 py-3 rounded-full
                bg-yellow-400 hover:bg-yellow-500
                text-sm font-semibold transition">
@@ -125,6 +105,7 @@
 
 <script setup lang="ts">
 import PageHero from '@/components/common/PageHero.vue';
+import TeamSection from '@/components/team/TeamSection.vue'
 const values = [
   {
     icon: '🎯',
@@ -187,5 +168,25 @@ const team = [
     role: 'Client Manager',
     avatar: 'https://i.pravatar.cc/100?img=4',
   },
+  {
+    name: 'Tom Cruise',
+    role: 'Assistant',
+    avatar: 'https://i.pravatar.cc/100?img=5',
+  },
+  {
+    name: 'Tom Hardy',
+    role: 'Manager',
+    avatar: 'https://i.pravatar.cc/100?img=6',
+  },
+  {
+    name: 'Angelina Jolie',
+    role: 'Consultant',
+    avatar: 'https://i.pravatar.cc/100?img=7',
+  },
+  {
+    name: 'Ryan Gauslin',
+    role: 'Manager',
+    avatar: 'https://i.pravatar.cc/100?img=8',
+  }
 ]
 </script>
