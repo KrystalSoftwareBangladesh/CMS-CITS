@@ -1,3 +1,4 @@
+<!-- src/components/common/HeroBanner.vue -->
 <template>
   <section class="pt-32 pb-24">
     <div class="max-w-6xl mx-auto px-4 text-center">
@@ -52,7 +53,7 @@
       </div>
 
       <!-- Brands -->
-      <div class="mt-14">
+      <!-- <div class="mt-14">
         <p class="text-sm text-gray-500 mb-4">
           Brands we’ve partnered with
         </p>
@@ -61,17 +62,38 @@
                  justify-center gap-6 opacity-70">
           <img v-for="(logo, index) in brands" :key="index" :src="logo" class="h-6 object-contain" alt="Brand logo" />
         </div>
+      </div> -->
+      <!-- Brands -->
+      <div class="mt-14">
+        <p class="text-sm text-gray-500 mb-4">
+          Brands we’ve partnered with
+        </p>
+        <!-- <BrandSlider :brands="brands" /> -->
+        <BrandMarquee :brands="brands" />
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+// import BrandSlider from '@/components/common/BrandSlider.vue'
+import BrandMarquee from './BrandMarquee.vue';
 const brands: string[] = [
   'https://dummyimage.com/100x40/ddd/000&text=Envato',
   'https://dummyimage.com/100x40/ddd/000&text=Deloitte',
   'https://dummyimage.com/100x40/ddd/000&text=Uber',
   'https://dummyimage.com/100x40/ddd/000&text=JustCall',
   'https://dummyimage.com/100x40/ddd/000&text=Shell',
+  'https://dummyimage.com/100x40/ddd/000&text=Pathao',
+  'https://dummyimage.com/100x40/ddd/000&text=bKash',
+  'https://dummyimage.com/100x40/ddd/000&text=EBL',
+  'https://dummyimage.com/100x40/ddd/000&text=DBBL',
+  'https://dummyimage.com/100x40/ddd/000&text=Gucci',
+  'https://dummyimage.com/100x40/ddd/000&text=Nike',
+  'https://dummyimage.com/100x40/ddd/000&text=LV',
+  'https://dummyimage.com/100x40/ddd/000&text=Yamaha',
+  'https://dummyimage.com/100x40/ddd/000&text=Suzuki',
+  'https://dummyimage.com/100x40/ddd/000&text=BMW',
+  'https://dummyimage.com/100x40/ddd/000&text=Mercedes',
 ]
 </script>
