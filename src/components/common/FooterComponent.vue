@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-vue-next'
-
 import { SITE_CONFIG } from '@/config/site'
 
 const year = new Date().getFullYear()
@@ -37,7 +36,6 @@ const socials = [
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
         <!-- Brand -->
         <div>
-          <!-- <img src="https://i.pravatar.cc/48" alt="Company Logo" class="w-12 h-12 rounded-full" /> -->
           <img src="/logo.png" alt="Company Logo" class="w-12 h-12 rounded-full" />
 
           <p class="mt-4 text-sm text-gray-600 max-w-xs">
@@ -116,7 +114,9 @@ const socials = [
                    px-5 py-2.5 rounded-full
                    bg-yellow-400 hover:bg-yellow-500
                    text-sm font-semibold transition">
-            Book a Free Call
+            <RouterLink to="/contact">
+              Book a Free Call
+            </RouterLink>
           </button>
         </div>
       </div>
@@ -141,7 +141,6 @@ const socials = [
           <RouterLink to="/terms-of-service" class="hover:text-gray-900 transition">
             Terms of Service
           </RouterLink>
-          <!-- <a href="#" class="hover:text-gray-900">Terms of Service</a> -->
         </div>
       </div>
     </div>
