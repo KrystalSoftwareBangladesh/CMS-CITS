@@ -135,7 +135,10 @@ const socials = [
         </p>
 
         <div class="flex gap-4 text-xs text-gray-500">
-          <a href="#" class="hover:text-gray-900">Privacy Policy</a>
+          <RouterLink to="/privacy-policy" class="hover:text-gray-900 transition">
+            Privacy Policy
+          </RouterLink>
+          <!-- <a href="#" class="hover:text-gray-900">Privacy Policy</a> -->
           <a href="#" class="hover:text-gray-900">Terms of Service</a>
         </div>
       </div>
