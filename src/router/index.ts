@@ -40,6 +40,14 @@ const router = createRouter({
       },
     },
     {
+      path: '/career',
+      name: 'career',
+      component: () => import('../views/CareerView.vue'),
+      meta: {
+        title: 'Career | CMS',
+      },
+    },
+    {
       path: '/contact',
       name: 'contact',
       component: () => import('../views/ContactView.vue'),

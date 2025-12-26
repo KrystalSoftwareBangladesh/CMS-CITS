@@ -51,24 +51,11 @@
           ▶ Understand How
         </button>
       </div>
-
-      <!-- Brands -->
-      <!-- <div class="mt-14">
-        <p class="text-sm text-gray-500 mb-4">
-          Brands we’ve partnered with
-        </p>
-
-        <div class="flex flex-wrap items-center
-                 justify-center gap-6 opacity-70">
-          <img v-for="(logo, index) in brands" :key="index" :src="logo" class="h-6 object-contain" alt="Brand logo" />
-        </div>
-      </div> -->
       <!-- Brands -->
       <div class="mt-14">
         <p class="text-sm text-gray-500 mb-4">
           Brands we’ve partnered with
         </p>
-        <!-- <BrandSlider :brands="brands" /> -->
         <BrandMarquee :brands="brands" />
       </div>
     </div>
@@ -76,7 +63,6 @@
 </template>
 
 <script setup lang="ts">
-// import BrandSlider from '@/components/common/BrandSlider.vue'
 import BrandMarquee from './BrandMarquee.vue';
 const brands: string[] = [
   'https://dummyimage.com/100x40/ddd/000&text=Envato',
