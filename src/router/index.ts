@@ -55,6 +55,15 @@ const router = createRouter({
         title: 'Privacy Policy | CMS',
       },
     },
+
+    {
+      path: '/terms-of-service',
+      name: 'terms-of-service',
+      component: () => import('../views/TermsOfServiceView.vue'),
+      meta: {
+        title: 'Privacy Policy | CMS',
+      },
+    },
     {
       path: '/:pathMatch(.*)*',
       name: 'not-found',

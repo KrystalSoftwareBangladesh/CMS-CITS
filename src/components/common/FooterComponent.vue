@@ -138,8 +138,10 @@ const socials = [
           <RouterLink to="/privacy-policy" class="hover:text-gray-900 transition">
             Privacy Policy
           </RouterLink>
-          <!-- <a href="#" class="hover:text-gray-900">Privacy Policy</a> -->
-          <a href="#" class="hover:text-gray-900">Terms of Service</a>
+          <RouterLink to="/terms-of-service" class="hover:text-gray-900 transition">
+            Terms of Service
+          </RouterLink>
+          <!-- <a href="#" class="hover:text-gray-900">Terms of Service</a> -->
         </div>
       </div>
     </div>
