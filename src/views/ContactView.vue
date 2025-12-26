@@ -35,7 +35,9 @@
           <button class="mt-4 px-6 py-2.5 rounded-full
                    bg-yellow-400 hover:bg-yellow-500
                    text-sm font-semibold transition">
-            Book a Free Call
+            <RouterLink to="/contact">
+              Book a Free Call
+            </RouterLink>
           </button>
         </div>
       </div>

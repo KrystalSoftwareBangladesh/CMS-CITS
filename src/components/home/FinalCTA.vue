@@ -8,7 +8,9 @@
     </p>
 
     <button class="mt-6 px-8 py-3 rounded-full bg-black text-white font-semibold hover:bg-gray-800 transition">
-      Book a Free Call
+      <RouterLink to="/contact">
+        Book a Free Call
+      </RouterLink>
     </button>
   </section>
 </template>

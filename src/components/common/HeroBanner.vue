@@ -38,7 +38,9 @@
                  px-6 py-3 rounded-full
                  bg-yellow-400 hover:bg-yellow-500
                  text-sm font-semibold transition">
-          📞 Book a Call
+          <RouterLink to="/contact">
+            📞 Book a Call
+          </RouterLink>
         </button>
 
         <button class="inline-flex items-center gap-2

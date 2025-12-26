@@ -100,7 +100,9 @@
       <button class="mt-6 px-8 py-3 rounded-full
                bg-yellow-400 hover:bg-yellow-500
                text-sm font-semibold transition">
-        Contact Us
+        <RouterLink to="/contact">
+          Contact Us
+        </RouterLink>
       </button>
     </section>
   </div>
