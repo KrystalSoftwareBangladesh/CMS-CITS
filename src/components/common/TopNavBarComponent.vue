@@ -59,6 +59,7 @@ const menuItems: MenuItem[] = [
   { key: 'about', label: 'Company', route: '/about' },
   { key: 'services', label: 'Services', route: '/services' },
   { key: 'pricing', label: 'Pricing', route: '/pricing' },
+  { key: 'career', label: 'Career', route: '/career' },
   { key: 'contact', label: 'Contact Us', route: '/contact' },
 ]
 
