@@ -57,6 +57,7 @@ const activeKey = ref('home')
 const menuItems: MenuItem[] = [
   { key: 'home', label: 'Home', route: '/' },
   { key: 'about', label: 'Company', route: '/about' },
+  { key: 'team', label: 'Team', route: '/team' },
   { key: 'services', label: 'Services', route: '/services' },
   { key: 'pricing', label: 'Pricing', route: '/pricing' },
   { key: 'career', label: 'Career', route: '/career' },

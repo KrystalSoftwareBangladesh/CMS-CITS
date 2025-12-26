@@ -24,6 +24,22 @@ const router = createRouter({
       },
     },
     {
+      path: '/team',
+      name: 'team',
+      component: () => import('@/views/TeamView.vue'),
+      meta: {
+        title: 'Member | CMS',
+      },
+    },
+    {
+      path: '/team/:slug',
+      name: 'team-member',
+      component: () => import('@/views/TeamMemberView.vue'),
+      meta: {
+        title: 'Member | CMS',
+      },
+    },
+    {
       path: '/services',
       name: 'services',
       component: () => import('../views/ServiceView.vue'),

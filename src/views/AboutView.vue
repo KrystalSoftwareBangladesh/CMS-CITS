@@ -152,41 +152,49 @@ const team = [
     name: 'Alex Morgan',
     role: 'Creative Director',
     avatar: 'https://i.pravatar.cc/100?img=1',
+    slug: 'alex-morgan',
   },
   {
     name: 'Sarah Lee',
     role: 'Video Producer',
     avatar: 'https://i.pravatar.cc/100?img=2',
+    slug: 'sarah-lee',
   },
   {
     name: 'James Carter',
     role: 'Editor',
     avatar: 'https://i.pravatar.cc/100?img=3',
+    slug: 'james-carter',
   },
   {
     name: 'Emily Stone',
     role: 'Client Manager',
     avatar: 'https://i.pravatar.cc/100?img=4',
+    slug: 'emily-stone',
   },
   {
     name: 'Tom Cruise',
     role: 'Assistant',
     avatar: 'https://i.pravatar.cc/100?img=5',
+    slug: 'tom-cruise',
   },
   {
     name: 'Tom Hardy',
     role: 'Manager',
     avatar: 'https://i.pravatar.cc/100?img=6',
+    slug: 'tom-hardy',
   },
   {
     name: 'Angelina Jolie',
     role: 'Consultant',
     avatar: 'https://i.pravatar.cc/100?img=7',
+    slug: 'angelina-jolie',
   },
   {
     name: 'Ryan Gauslin',
     role: 'Manager',
     avatar: 'https://i.pravatar.cc/100?img=8',
+    slug: 'ryan-gauslin',
   }
 ]
 </script>
