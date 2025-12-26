@@ -7,7 +7,7 @@
 
       <div class="mt-12 grid md:grid-cols-3 gap-8">
         <div v-for="step in steps" :key="step.title">
-          <div class="text-4xl font-bold text-yellow-400">
+          <div class="text-4xl font-bold text-primary">
             {{ step.number }}
           </div>
           <h3 class="mt-4 font-semibold text-gray-900">

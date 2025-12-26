@@ -58,7 +58,7 @@ import ReasonCard from '@/components/why/ReasonCard.vue'
 
       <RouterLink to="/contact" class="inline-flex items-center justify-center
                mt-6 px-8 py-3 rounded-full
-               bg-yellow-400 hover:bg-yellow-500
+               bg-primary hover:bg-primary-hover
                text-sm font-semibold transition">
         Book a Free Call
       </RouterLink>

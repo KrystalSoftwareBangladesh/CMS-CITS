@@ -33,7 +33,7 @@
           </p>
 
           <button class="mt-4 px-6 py-2.5 rounded-full
-                   bg-yellow-400 hover:bg-yellow-500
+                   bg-primary hover:bg-primary-hover
                    text-sm font-semibold transition">
             <RouterLink to="/contact">
               Book a Free Call
