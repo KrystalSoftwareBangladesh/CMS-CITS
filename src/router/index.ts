@@ -64,6 +64,14 @@ const router = createRouter({
       },
     },
     {
+      path: '/why-cits',
+      name: 'why-cits',
+      component: () => import('@/views/WhyCITSView.vue'),
+      meta: {
+        title: 'Why CITS | CMS',
+      },
+    },
+    {
       path: '/contact',
       name: 'contact',
       component: () => import('../views/ContactView.vue'),
