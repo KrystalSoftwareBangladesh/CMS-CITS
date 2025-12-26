@@ -83,6 +83,7 @@
 
     <!-- TEAM -->
     <TeamSection title="Meet the Team" :team="team" />
+    <WhyCITSHighlight />
 
     <!-- CTA -->
     <section class="py-24 text-center">
@@ -106,6 +107,8 @@
 <script setup lang="ts">
 import PageHero from '@/components/common/PageHero.vue';
 import TeamSection from '@/components/team/TeamSection.vue'
+import WhyCITSHighlight from '@/components/about/WhyCITSHighlight.vue'
+
 const values = [
   {
     icon: '🎯',
