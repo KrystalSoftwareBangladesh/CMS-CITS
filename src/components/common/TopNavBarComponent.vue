@@ -26,7 +26,9 @@
           <button class="hidden sm:inline-flex items-center gap-2
                    px-4 py-2 rounded-full text-sm font-semibold
                    bg-yellow-400 hover:bg-yellow-500 transition">
-            📞 Schedule a Call
+            <RouterLink to="/contact">
+              📞 Schedule a Call
+            </RouterLink>
           </button>
 
           <!-- Mobile Menu Button (optional later) -->
