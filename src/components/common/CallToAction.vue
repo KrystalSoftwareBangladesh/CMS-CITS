@@ -34,7 +34,7 @@ withDefaults(defineProps<Props>(), {
       <!-- Internal Route -->
       <RouterLink v-if="to" :to="to" class="inline-flex items-center justify-center
                px-6 py-3 rounded-full
-               bg-yellow-400 hover:bg-yellow-500
+               bg-primary hover:bg-primary-hover
                text-sm font-semibold
                transition">
         {{ buttonText }}
@@ -43,7 +43,7 @@ withDefaults(defineProps<Props>(), {
       <!-- External Booking -->
       <a v-else-if="externalUrl" :href="externalUrl" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center
                px-6 py-3 rounded-full
-               bg-yellow-400 hover:bg-yellow-500
+               bg-primary hover:bg-primary-hover
                text-sm font-semibold
                transition">
         {{ buttonText }}

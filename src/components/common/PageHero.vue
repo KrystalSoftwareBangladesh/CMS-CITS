@@ -28,7 +28,7 @@ defineProps<Props>()
           <span class="relative z-10 px-2">
             {{ highlight }}
           </span>
-          <span class="absolute inset-0 bg-yellow-200
+          <span class="absolute inset-0 bg-primary-soft
                    rounded-lg -z-0"></span>
         </span>
       </template>

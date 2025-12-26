@@ -68,7 +68,7 @@
       </h2>
       <div class="mt-12 grid md:grid-cols-3 gap-8">
         <div v-for="step in process" :key="step.title">
-          <div class="text-4xl font-bold text-yellow-400">
+          <div class="text-4xl font-bold text-primary">
             {{ step.number }}
           </div>
           <h3 class="mt-4 font-semibold text-gray-900">
@@ -94,7 +94,7 @@
         Let’s create something impactful together.
       </p>
       <button class="mt-6 px-8 py-3 rounded-full
-               bg-yellow-400 hover:bg-yellow-500
+               bg-primary hover:bg-primary-hover
                text-sm font-semibold transition">
         <RouterLink to="/contact">
           Book a Free Call

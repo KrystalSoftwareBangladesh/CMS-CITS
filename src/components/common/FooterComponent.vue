@@ -36,7 +36,8 @@ const socials = [
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
         <!-- Brand -->
         <div>
-          <img src="/logo.png" alt="Company Logo" class="w-12 h-12 rounded-full" />
+          <!-- <img src="/logo.png" alt="Company Logo" class="w-12 h-12 rounded-full" /> -->
+           <img src="/logo.png" alt="Company Logo" class="w-48 h-12 rounded-full" />
 
           <p class="mt-4 text-sm text-gray-600 max-w-xs">
             We help SaaS companies and brands grow with high-impact
@@ -112,7 +113,7 @@ const socials = [
 
           <button class="inline-flex items-center justify-center
                    px-5 py-2.5 rounded-full
-                   bg-yellow-400 hover:bg-yellow-500
+                   bg-primary hover:bg-primary-hover
                    text-sm font-semibold transition">
             <RouterLink to="/contact">
               Book a Free Call

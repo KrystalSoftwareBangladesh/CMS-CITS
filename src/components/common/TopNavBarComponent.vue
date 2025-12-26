@@ -6,7 +6,8 @@
                px-4 py-2">
         <!-- Logo (Avatar Image) -->
         <div class="flex items-center">
-          <img src="/logo.png" alt="Logo" class="w-10 h-10 rounded-full object-cover" />
+          <!-- <img src="/logo.png" alt="Logo" class="w-10 h-10 rounded-full object-cover" /> -->
+           <img src="/logo.png" alt="Logo" class="w-48 h-12" />
         </div>
 
         <!-- Menu -->
@@ -25,7 +26,7 @@
         <div class="flex items-center gap-2">
           <button class="hidden sm:inline-flex items-center gap-2
                    px-4 py-2 rounded-full text-sm font-semibold
-                   bg-yellow-400 hover:bg-yellow-500 transition">
+                   bg-primary hover:bg-primary-hover transition">
             <RouterLink to="/contact">
               📞 Schedule a Call
             </RouterLink>

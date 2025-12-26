@@ -21,7 +21,7 @@
             VIDEOS
           </span>
           <!-- Highlight box -->
-          <span class="absolute inset-0 bg-yellow-200 rounded-lg -z-0"></span>
+          <span class="absolute inset-0 bg-primary-soft rounded-lg -z-0"></span>
         </span>
       </h1>
 
@@ -37,7 +37,7 @@
                items-center justify-center gap-4">
         <button class="inline-flex items-center gap-2
                  px-6 py-3 rounded-full
-                 bg-yellow-400 hover:bg-yellow-500
+                 bg-primary hover:bg-primary-hover
                  text-sm font-semibold transition">
           <RouterLink to="/contact">
             📞 Book a Call

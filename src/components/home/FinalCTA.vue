@@ -1,5 +1,5 @@
 <template>
-  <section class="py-24 text-center bg-yellow-400">
+  <section class="py-24 text-center bg-primary">
     <h2 class="text-3xl font-bold text-gray-900">
       Ready to Grow Your Brand?
     </h2>
