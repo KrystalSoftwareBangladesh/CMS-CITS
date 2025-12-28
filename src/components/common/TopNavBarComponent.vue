@@ -39,26 +39,46 @@
           </button>
 
           <button @click="toggleMobileMenu" class="md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300">
-            <Menu class="w-5 h-5" />
+            <X v-if="mobileMenuOpen" class="w-5 h-5" />
+            <Menu v-else class="w-5 h-5" />
           </button>
         </div>
       </nav>
 
-      <div v-if="mobileMenuOpen" class="md:hidden mt-2 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-4">
-        <ul class="space-y-1">
-          <li v-for="item in menuItems" :key="item.key">
-            <button
-              @click="navigate(item); mobileMenuOpen = false"
-              class="w-full text-left px-4 py-2 text-sm font-medium rounded-lg transition"
-              :class="activeKey === item.key
-                ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white'
-                : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'"
+      <transition
+        enter-active-class="transition duration-200 ease-out"
+        enter-from-class="opacity-0 -translate-y-2"
+        enter-to-class="opacity-100 translate-y-0"
+        leave-active-class="transition duration-150 ease-in"
+        leave-from-class="opacity-100 translate-y-0"
+        leave-to-class="opacity-0 -translate-y-2"
+      >
+        <div v-if="mobileMenuOpen" class="md:hidden mt-2 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-4">
+          <ul class="space-y-1">
+            <li v-for="item in menuItems" :key="item.key">
+              <button
+                @click="navigate(item); mobileMenuOpen = false"
+                class="w-full text-left px-4 py-2 text-sm font-medium rounded-lg transition"
+                :class="activeKey === item.key
+                  ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white'
+                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'"
+              >
+                {{ item.label }}
+              </button>
+            </li>
+          </ul>
+          <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+            <RouterLink
+              to="/contact"
+              class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-full text-sm font-semibold text-white bg-primary hover:bg-primary-hover transition"
+              @click="mobileMenuOpen = false"
             >
-              {{ item.label }}
-            </button>
-          </li>
-        </ul>
-      </div>
+              <Phone class="w-4 h-4" />
+              Schedule a Call
+            </RouterLink>
+          </div>
+        </div>
+      </transition>
     </div>
   </header>
 </template>
@@ -66,7 +86,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { Sun, Moon, Phone, Menu } from 'lucide-vue-next'
+import { Sun, Moon, Phone, Menu, X } from 'lucide-vue-next'
 
 interface MenuItem {
   key: string
