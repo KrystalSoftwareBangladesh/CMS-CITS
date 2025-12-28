@@ -1,4 +1,3 @@
-// router/index.ts
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -15,9 +14,6 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
       meta: {
         title: 'About | CMS',
@@ -80,6 +76,14 @@ const router = createRouter({
       },
     },
     {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/auth/LoginView.vue'),
+      meta: {
+        title: 'Login | CMS Admin',
+      },
+    },
+    {
       path: '/privacy-policy',
       name: 'privacy-policy',
       component: () => import('../views/PrivacyPolicyView.vue'),
@@ -87,14 +91,170 @@ const router = createRouter({
         title: 'Privacy Policy | CMS',
       },
     },
-
     {
       path: '/terms-of-service',
       name: 'terms-of-service',
       component: () => import('../views/TermsOfServiceView.vue'),
       meta: {
-        title: 'Privacy Policy | CMS',
+        title: 'Terms of Service | CMS',
       },
+    },
+    {
+      path: '/admin',
+      component: () => import('@/layouts/AdminLayout.vue'),
+      meta: {
+        requiresAuth: true,
+      },
+      children: [
+        {
+          path: '',
+          redirect: '/admin/dashboard',
+        },
+        {
+          path: 'dashboard',
+          name: 'admin-dashboard',
+          component: () => import('@/views/admin/AdminDashboard.vue'),
+          meta: {
+            title: 'Dashboard',
+            permission: 'dashboard.view',
+          },
+        },
+        {
+          path: 'users',
+          name: 'admin-users',
+          component: () => import('@/views/admin/UsersListView.vue'),
+          meta: {
+            title: 'Users',
+            permission: 'users.view',
+          },
+        },
+        {
+          path: 'users/create',
+          name: 'admin-users-create',
+          component: () => import('@/views/admin/UserFormView.vue'),
+          meta: {
+            title: 'Create User',
+            permission: 'users.create',
+          },
+        },
+        {
+          path: 'users/:id/edit',
+          name: 'admin-users-edit',
+          component: () => import('@/views/admin/UserFormView.vue'),
+          meta: {
+            title: 'Edit User',
+            permission: 'users.edit',
+          },
+        },
+        {
+          path: 'roles',
+          name: 'admin-roles',
+          component: () => import('@/views/admin/RolesListView.vue'),
+          meta: {
+            title: 'Roles',
+            permission: 'roles.view',
+          },
+        },
+        {
+          path: 'permissions',
+          name: 'admin-permissions',
+          component: () => import('@/views/admin/PermissionsView.vue'),
+          meta: {
+            title: 'Permissions',
+            permission: 'permissions.view',
+          },
+        },
+        {
+          path: 'content/pages',
+          name: 'admin-pages',
+          component: () => import('@/views/admin/PagesListView.vue'),
+          meta: {
+            title: 'Pages',
+            permission: 'pages.view',
+          },
+        },
+        {
+          path: 'content/posts',
+          name: 'admin-posts',
+          component: () => import('@/views/admin/PostsListView.vue'),
+          meta: {
+            title: 'Posts',
+            permission: 'posts.view',
+          },
+        },
+        {
+          path: 'content/posts/create',
+          name: 'admin-posts-create',
+          component: () => import('@/views/admin/UserFormView.vue'),
+          meta: {
+            title: 'Create Post',
+            permission: 'posts.create',
+          },
+        },
+        {
+          path: 'content/posts/:id/edit',
+          name: 'admin-posts-edit',
+          component: () => import('@/views/admin/UserFormView.vue'),
+          meta: {
+            title: 'Edit Post',
+            permission: 'posts.edit',
+          },
+        },
+        {
+          path: 'content/categories',
+          name: 'admin-categories',
+          component: () => import('@/views/admin/CategoriesListView.vue'),
+          meta: {
+            title: 'Categories',
+            permission: 'categories.view',
+          },
+        },
+        {
+          path: 'media',
+          name: 'admin-media',
+          component: () => import('@/views/admin/MediaLibraryView.vue'),
+          meta: {
+            title: 'Media Library',
+            permission: 'media.view',
+          },
+        },
+        {
+          path: 'settings',
+          name: 'admin-settings',
+          component: () => import('@/views/admin/SettingsView.vue'),
+          meta: {
+            title: 'Settings',
+            permission: 'settings.view',
+          },
+        },
+        {
+          path: 'settings/general',
+          name: 'admin-settings-general',
+          component: () => import('@/views/admin/SettingsView.vue'),
+          meta: {
+            title: 'General Settings',
+            permission: 'settings.general',
+          },
+        },
+        {
+          path: 'settings/appearance',
+          name: 'admin-settings-appearance',
+          component: () => import('@/views/admin/SettingsView.vue'),
+          meta: {
+            title: 'Appearance Settings',
+            permission: 'settings.appearance',
+          },
+        },
+        {
+          path: 'settings/security',
+          name: 'admin-settings-security',
+          component: () => import('@/views/admin/SettingsView.vue'),
+          meta: {
+            title: 'Security Settings',
+            permission: 'settings.security',
+          },
+        },
+      ],
     },
     {
       path: '/:pathMatch(.*)*',
@@ -112,7 +272,6 @@ const router = createRouter({
 
 router.beforeEach((to) => {
   const defaultTitle = 'CMS'
-
   document.title = (to.meta.title as string) || defaultTitle
 })
 

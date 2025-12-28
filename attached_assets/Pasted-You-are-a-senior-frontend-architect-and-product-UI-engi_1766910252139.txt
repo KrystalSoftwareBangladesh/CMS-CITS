@@ -1,0 +1,202 @@
+You are a senior frontend architect and product UI engineer.
+
+Your task is to DESIGN and IMPLEMENT a COMPLETE CMS ADMIN PANEL UI
+inside the EXISTING PROJECT (same repo, same tech stack).
+
+🚫 No API integration.
+🚫 No backend logic.
+✅ UI-only with mocked/static data.
+✅ Maximum reusable components.
+✅ Clean, scalable architecture.
+
+--------------------------------------------------
+TECH STACK (MANDATORY)
+--------------------------------------------------
+- Vue 3 (Composition API)
+- TypeScript (strict)
+- Tailwind CSS
+- Vite
+- Pinia (state placeholders only)
+- Vue Router
+- No external UI frameworks (no Vuetify, no Element, no Ant)
+
+--------------------------------------------------
+HIGH-LEVEL GOAL
+--------------------------------------------------
+Build a PROFESSIONAL, ENTERPRISE-GRADE CMS ADMIN PANEL similar to:
+- Strapi Admin
+- Directus
+- Sanity Studio
+- Laravel Nova
+
+Focus on:
+- Consistency
+- Reusability
+- Accessibility
+- Future API readiness
+
+--------------------------------------------------
+LAYOUT STRUCTURE
+--------------------------------------------------
+Create a FULL ADMIN LAYOUT SYSTEM:
+
+1. AdminLayout.vue
+   - Sidebar (collapsible)
+   - Topbar (page title, user menu)
+   - Main content area
+   - Responsive behavior (desktop first)
+
+2. Sidebar
+   - Logo area
+   - Dynamic menu groups
+   - Active route highlighting
+   - Icons support
+   - Collapse/expand support
+
+3. Topbar
+   - Page title (from route meta)
+   - Breadcrumbs (optional)
+   - Theme toggle (light/dark placeholder)
+   - User dropdown (Profile, Settings, Logout — UI only)
+
+--------------------------------------------------
+ROUTING STRUCTURE
+--------------------------------------------------
+Use nested routes under /admin:
+
+/admin
+  ├── dashboard
+  ├── users
+  ├── roles
+  ├── permissions
+  ├── content
+  │     ├── pages
+  │     ├── posts
+  │     ├── categories
+  ├── media
+  ├── settings
+  │     ├── general
+  │     ├── appearance
+  │     ├── security
+
+Each route MUST:
+- Use AdminLayout
+- Have route meta:
+  - title
+  - breadcrumb
+  - permission (string placeholder)
+
+--------------------------------------------------
+REUSABLE COMPONENT SYSTEM (CRITICAL)
+--------------------------------------------------
+Design everything using REUSABLE BASE COMPONENTS.
+
+Create a `/components/ui` directory with:
+
+- BaseButton.vue
+- BaseInput.vue
+- BaseSelect.vue
+- BaseTextarea.vue
+- BaseCheckbox.vue
+- BaseSwitch.vue
+- BaseModal.vue
+- BaseDropdown.vue
+- BaseBadge.vue
+- BaseTooltip.vue
+- BaseTable.vue
+- BasePagination.vue
+- BaseCard.vue
+- BaseAlert.vue
+- BaseTabs.vue
+- BaseEmptyState.vue
+
+Rules:
+- Props-driven
+- Slot-based
+- NO hardcoded styles per use-case
+- Fully typed props
+- Accessible defaults
+
+--------------------------------------------------
+PAGE TYPES TO DESIGN
+--------------------------------------------------
+Create the following PAGE PATTERNS using reusable components:
+
+1. Dashboard
+   - Stats cards
+   - Recent activity table
+   - Placeholder charts (UI only)
+
+2. List Pages (Users, Posts, Pages)
+   - Search bar
+   - Filters (mock)
+   - Table with:
+     - Pagination
+     - Sorting UI
+     - Actions dropdown
+
+3. Create/Edit Pages
+   - Form layout
+   - Section grouping
+   - Validation UI (mock)
+   - Sticky action bar (Save, Cancel)
+
+4. Settings Pages
+   - Tab-based layout
+   - Toggle switches
+   - Save state feedback
+
+--------------------------------------------------
+STATE MANAGEMENT (PLACEHOLDER)
+--------------------------------------------------
+Use Pinia ONLY for:
+- Sidebar collapse state
+- Theme state
+- Mock user info
+
+DO NOT fetch data.
+DO NOT simulate API calls.
+Use local mock constants.
+
+--------------------------------------------------
+DESIGN SYSTEM RULES
+--------------------------------------------------
+- Tailwind utility-first
+- Use CSS variables for theme colors
+- Light theme default
+- Dark theme ready (no JS logic needed yet)
+- Consistent spacing scale
+- Consistent typography scale
+- No inline styles
+
+--------------------------------------------------
+CODE QUALITY RULES
+--------------------------------------------------
+- Strict TypeScript
+- No `any`
+- Composition API only
+- Small, focused components
+- Clear folder structure
+- Meaningful naming
+- Comments ONLY where necessary
+
+--------------------------------------------------
+OUTPUT EXPECTATION
+--------------------------------------------------
+1. Create folder structure
+2. Create AdminLayout
+3. Create Sidebar & Topbar
+4. Create reusable UI components
+5. Create 3–5 example pages fully wired
+6. Ensure everything is visually consistent
+7. Everything must run without errors
+
+--------------------------------------------------
+IMPORTANT
+--------------------------------------------------
+Think LONG-TERM:
+This UI will later connect to APIs, RBAC, permissions,
+and dynamic schemas.
+
+Design it like a real-world production CMS,
+not a demo or tutorial project.
