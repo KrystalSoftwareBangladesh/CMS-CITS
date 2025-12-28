@@ -11,7 +11,7 @@ const isAdminRoute = computed(() => route.path.startsWith('/admin'));
 </script>
 
 <template>
-  <div id="app" class="min-h-screen flex flex-col">
+  <div id="app" class="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors">
     <template v-if="isAdminRoute">
       <RouterView />
     </template>
