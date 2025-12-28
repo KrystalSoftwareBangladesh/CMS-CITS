@@ -76,6 +76,14 @@ const router = createRouter({
       },
     },
     {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/auth/LoginView.vue'),
+      meta: {
+        title: 'Login | CMS Admin',
+      },
+    },
+    {
       path: '/privacy-policy',
       name: 'privacy-policy',
       component: () => import('../views/PrivacyPolicyView.vue'),
