@@ -12,7 +12,7 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
   title: 'Ready to grow your business?',
-  description: 'Book a free call and let's discuss how we can help you.',
+  description: "Book a free call and let's discuss how we can help you.",
   buttonText: 'Book a Free Call',
   variant: 'default'
 })
