@@ -105,6 +105,7 @@ const menuItems: MenuItem[] = [
   { key: 'team', label: 'Team', route: '/team' },
   { key: 'services', label: 'Services', route: '/services' },
   { key: 'pricing', label: 'Pricing', route: '/pricing' },
+  { key: 'blog', label: 'Blog', route: '/blog' },
   { key: 'career', label: 'Career', route: '/career' },
   { key: 'contact', label: 'Contact Us', route: '/contact' },
 ]
