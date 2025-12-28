@@ -48,12 +48,12 @@ function isActiveRoute(path: string): boolean {
 <template>
   <aside
     :class="[
-      'fixed top-0 left-0 z-40 h-screen bg-white border-r border-gray-200 transition-all duration-300',
+      'fixed top-0 left-0 z-40 h-screen bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 transition-all duration-300',
       isCollapsed ? 'w-16' : 'w-64'
     ]"
   >
     <div class="h-full flex flex-col">
-      <div class="flex items-center justify-between h-16 px-4 border-b border-gray-200">
+      <div class="flex items-center justify-between h-16 px-4 border-b border-gray-200 dark:border-gray-700">
         <RouterLink
           to="/admin/dashboard"
           class="flex items-center gap-2"
@@ -63,7 +63,7 @@ function isActiveRoute(path: string): boolean {
           </div>
           <span
             v-if="!isCollapsed"
-            class="font-semibold text-gray-900 whitespace-nowrap"
+            class="font-semibold text-gray-900 dark:text-white whitespace-nowrap"
           >
             CMS Admin
           </span>
@@ -71,7 +71,7 @@ function isActiveRoute(path: string): boolean {
         <button
           v-if="!isCollapsed"
           type="button"
-          class="p-1 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg"
+          class="p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
           @click="adminStore.toggleSidebar()"
         >
           <ChevronLeft class="w-5 h-5" />
@@ -81,7 +81,7 @@ function isActiveRoute(path: string): boolean {
       <nav class="flex-1 overflow-y-auto py-4 px-3">
         <template v-for="group in adminMenuGroups" :key="group.title">
           <div v-if="!isCollapsed" class="mb-4">
-            <h3 class="px-3 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+            <h3 class="px-3 mb-2 text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
               {{ group.title }}
             </h3>
             <ul class="space-y-1">
@@ -92,8 +92,8 @@ function isActiveRoute(path: string): boolean {
                   :class="[
                     'flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors',
                     isActiveRoute(item.to)
-                      ? 'bg-primary-soft text-primary'
-                      : 'text-gray-700 hover:bg-gray-100'
+                      ? 'bg-primary-soft dark:bg-primary/20 text-primary'
+                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                   ]"
                 >
                   <component
@@ -112,7 +112,7 @@ function isActiveRoute(path: string): boolean {
                           'flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm transition-colors',
                           isActiveRoute(child.to)
                             ? 'text-primary font-medium'
-                            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                            : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700'
                         ]"
                       >
                         {{ child.label }}
@@ -132,8 +132,8 @@ function isActiveRoute(path: string): boolean {
                   :class="[
                     'flex items-center justify-center p-2 rounded-lg transition-colors',
                     isActiveRoute(item.to)
-                      ? 'bg-primary-soft text-primary'
-                      : 'text-gray-700 hover:bg-gray-100'
+                      ? 'bg-primary-soft dark:bg-primary/20 text-primary'
+                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                   ]"
                   :title="item.label"
                 >
@@ -148,11 +148,11 @@ function isActiveRoute(path: string): boolean {
         </template>
       </nav>
 
-      <div class="p-3 border-t border-gray-200">
+      <div class="p-3 border-t border-gray-200 dark:border-gray-700">
         <button
           v-if="isCollapsed"
           type="button"
-          class="w-full p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg flex items-center justify-center"
+          class="w-full p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg flex items-center justify-center"
           @click="adminStore.toggleSidebar()"
         >
           <ChevronRight class="w-5 h-5" />

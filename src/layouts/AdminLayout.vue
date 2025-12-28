@@ -8,13 +8,13 @@ import AdminTopbar from '@/components/admin/AdminTopbar.vue'
 const adminStore = useAdminStore()
 
 const mainClass = computed(() => [
-  'min-h-screen bg-gray-50 pt-16 transition-all duration-300',
+  'min-h-screen bg-gray-50 dark:bg-gray-900 pt-16 transition-all duration-300',
   adminStore.sidebarCollapsed ? 'pl-16' : 'pl-64'
 ])
 </script>
 
 <template>
-  <div>
+  <div class="dark:text-gray-100">
     <AdminSidebar />
     <AdminTopbar />
     <main :class="mainClass">

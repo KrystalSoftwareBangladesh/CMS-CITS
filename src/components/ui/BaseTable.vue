@@ -25,16 +25,16 @@ defineEmits<{
 </script>
 
 <template>
-  <div class="overflow-x-auto rounded-lg border border-gray-200">
-    <table class="min-w-full divide-y divide-gray-200">
-      <thead class="bg-gray-50">
+  <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
+    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+      <thead class="bg-gray-50 dark:bg-gray-800">
         <tr>
           <th v-if="selectable" class="w-12 px-4 py-3">
             <input type="checkbox" class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary" />
           </th>
           <th v-for="column in columns" :key="column.key" :style="column.width ? { width: column.width } : {}" :class="[
-            'px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider',
-            column.sortable ? 'cursor-pointer hover:bg-gray-100' : ''
+            'px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider',
+            column.sortable ? 'cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700' : ''
           ]" @click="column.sortable && $emit('sort', column.key)">
             <div class="flex items-center gap-1">
               {{ column.label }}
@@ -47,11 +47,11 @@ defineEmits<{
           </th>
         </tr>
       </thead>
-      <tbody class="bg-white divide-y divide-gray-200">
+      <tbody class="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
         <template v-if="loading">
           <tr>
             <td :colspan="selectable ? columns.length + 1 : columns.length" class="px-4 py-8 text-center">
-              <div class="flex items-center justify-center gap-2 text-gray-500">
+              <div class="flex items-center justify-center gap-2 text-gray-500 dark:text-gray-400">
                 <svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
                   <path class="opacity-75" fill="currentColor"
@@ -64,20 +64,20 @@ defineEmits<{
         </template>
         <template v-else-if="data.length === 0">
           <tr>
-            <td :colspan="selectable ? columns.length + 1 : columns.length" class="px-4 py-8 text-center text-gray-500">
+            <td :colspan="selectable ? columns.length + 1 : columns.length" class="px-4 py-8 text-center text-gray-500 dark:text-gray-400">
               No data available
             </td>
           </tr>
         </template>
         <template v-else>
           <tr v-for="(row, index) in data" :key="index" :class="[
-            hoverable ? 'hover:bg-gray-50 cursor-pointer' : ''
+            hoverable ? 'hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer' : ''
           ]" @click="$emit('row-click', row)">
             <td v-if="selectable" class="w-12 px-4 py-3">
               <input type="checkbox" :checked="selectedIds.includes(String((row as Record<string, unknown>).id))"
                 class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary" @click.stop />
             </td>
-            <td v-for="column in columns" :key="column.key" class="px-4 py-3 text-sm text-gray-900">
+            <td v-for="column in columns" :key="column.key" class="px-4 py-3 text-sm text-gray-900 dark:text-gray-100">
               <slot :name="`cell-${column.key}`" :row="row" :value="(row as Record<string, unknown>)[column.key]">
                 {{ (row as Record<string, unknown>)[column.key] }}
               </slot>

@@ -24,10 +24,10 @@ const paddingClasses = {
 <template>
   <div
     :class="[
-      'bg-white rounded-lg',
+      'bg-white dark:bg-gray-800 rounded-lg',
       paddingClasses[padding],
       shadow ? 'shadow-sm' : '',
-      border ? 'border border-gray-200' : '',
+      border ? 'border border-gray-200 dark:border-gray-700' : '',
       hoverable ? 'transition-shadow hover:shadow-md' : ''
     ]"
   >

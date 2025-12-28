@@ -24,7 +24,7 @@ const breadcrumbs = computed(() => {
 <template>
   <header
     :class="[
-      'fixed top-0 right-0 z-30 h-16 bg-white border-b border-gray-200 transition-all duration-300',
+      'fixed top-0 right-0 z-30 h-16 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 transition-all duration-300',
       adminStore.sidebarCollapsed ? 'left-16' : 'left-64'
     ]"
   >
@@ -32,18 +32,18 @@ const breadcrumbs = computed(() => {
       <div class="flex items-center gap-4">
         <button
           type="button"
-          class="lg:hidden p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg"
+          class="lg:hidden p-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
           @click="adminStore.toggleSidebar()"
         >
           <Menu class="w-5 h-5" />
         </button>
         
         <div>
-          <h1 class="text-lg font-semibold text-gray-900">{{ pageTitle }}</h1>
+          <h1 class="text-lg font-semibold text-gray-900 dark:text-white">{{ pageTitle }}</h1>
           <nav v-if="breadcrumbs.length > 0" class="flex items-center gap-1 text-sm">
             <RouterLink
               to="/admin/dashboard"
-              class="text-gray-500 hover:text-gray-700"
+              class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
             >
               Admin
             </RouterLink>
@@ -52,11 +52,11 @@ const breadcrumbs = computed(() => {
               <RouterLink
                 v-if="index < breadcrumbs.length - 1"
                 :to="crumb.to"
-                class="text-gray-500 hover:text-gray-700"
+                class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
               >
                 {{ crumb.label }}
               </RouterLink>
-              <span v-else class="text-gray-900 font-medium">{{ crumb.label }}</span>
+              <span v-else class="text-gray-900 dark:text-white font-medium">{{ crumb.label }}</span>
             </template>
           </nav>
         </div>
@@ -65,7 +65,7 @@ const breadcrumbs = computed(() => {
       <div class="flex items-center gap-2">
         <button
           type="button"
-          class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg"
+          class="p-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
           @click="adminStore.toggleTheme()"
         >
           <Sun v-if="adminStore.theme === 'light'" class="w-5 h-5" />
@@ -74,7 +74,7 @@ const breadcrumbs = computed(() => {
 
         <button
           type="button"
-          class="relative p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg"
+          class="relative p-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
         >
           <Bell class="w-5 h-5" />
           <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full" />
@@ -84,7 +84,7 @@ const breadcrumbs = computed(() => {
           <template #trigger>
             <button
               type="button"
-              class="flex items-center gap-2 p-1.5 hover:bg-gray-100 rounded-lg"
+              class="flex items-center gap-2 p-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
             >
               <img
                 :src="adminStore.currentUser?.avatar"
@@ -92,35 +92,35 @@ const breadcrumbs = computed(() => {
                 class="w-8 h-8 rounded-full"
               />
               <div class="hidden sm:block text-left">
-                <p class="text-sm font-medium text-gray-900">{{ adminStore.currentUser?.name }}</p>
-                <p class="text-xs text-gray-500">{{ adminStore.currentUser?.role }}</p>
+                <p class="text-sm font-medium text-gray-900 dark:text-white">{{ adminStore.currentUser?.name }}</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">{{ adminStore.currentUser?.role }}</p>
               </div>
             </button>
           </template>
 
-          <div class="px-4 py-3 border-b border-gray-100">
-            <p class="text-sm font-medium text-gray-900">{{ adminStore.currentUser?.name }}</p>
-            <p class="text-xs text-gray-500">{{ adminStore.currentUser?.email }}</p>
+          <div class="px-4 py-3 border-b border-gray-100 dark:border-gray-700">
+            <p class="text-sm font-medium text-gray-900 dark:text-white">{{ adminStore.currentUser?.name }}</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">{{ adminStore.currentUser?.email }}</p>
           </div>
 
           <RouterLink
             to="/admin/profile"
-            class="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            class="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
           >
             <User class="w-4 h-4" />
             Profile
           </RouterLink>
           <RouterLink
             to="/admin/settings"
-            class="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            class="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
           >
             <Settings class="w-4 h-4" />
             Settings
           </RouterLink>
-          <div class="border-t border-gray-100">
+          <div class="border-t border-gray-100 dark:border-gray-700">
             <button
               type="button"
-              class="flex items-center gap-2 w-full px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+              class="flex items-center gap-2 w-full px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <LogOut class="w-4 h-4" />
               Sign out

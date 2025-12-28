@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 export interface User {
   id: string
@@ -9,9 +9,25 @@ export interface User {
   role: string
 }
 
+function getInitialTheme(): 'light' | 'dark' {
+  if (typeof window !== 'undefined') {
+    const stored = localStorage.getItem('admin-theme')
+    if (stored === 'dark' || stored === 'light') return stored
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'
+  }
+  return 'light'
+}
+
+function applyTheme(theme: 'light' | 'dark') {
+  if (typeof document !== 'undefined') {
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+    localStorage.setItem('admin-theme', theme)
+  }
+}
+
 export const useAdminStore = defineStore('admin', () => {
   const sidebarCollapsed = ref(false)
-  const theme = ref<'light' | 'dark'>('light')
+  const theme = ref<'light' | 'dark'>(getInitialTheme())
   
   const currentUser = ref<User>({
     id: '1',
@@ -19,6 +35,12 @@ export const useAdminStore = defineStore('admin', () => {
     email: 'john.doe@example.com',
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=john',
     role: 'Administrator'
+  })
+
+  applyTheme(theme.value)
+
+  watch(theme, (newTheme) => {
+    applyTheme(newTheme)
   })
 
   function toggleSidebar() {

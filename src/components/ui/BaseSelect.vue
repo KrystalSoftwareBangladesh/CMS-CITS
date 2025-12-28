@@ -29,7 +29,7 @@ defineEmits<{
     <label
       v-if="label"
       :for="id"
-      class="block text-sm font-medium text-gray-700 mb-1"
+      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
     >
       {{ label }}
       <span v-if="required" class="text-red-500">*</span>
@@ -41,20 +41,21 @@ defineEmits<{
         :disabled="disabled"
         :required="required"
         :class="[
-          'block w-full px-3 py-2 pr-10 border rounded-lg text-gray-900 appearance-none transition-colors duration-200',
-          'focus:outline-none focus:ring-2 focus:ring-offset-0',
+          'block w-full px-3 py-2 pr-10 border rounded-lg text-gray-900 dark:text-white appearance-none transition-colors duration-200',
+          'focus:outline-none focus:ring-2 focus:ring-offset-0 dark:focus:ring-offset-gray-800',
           error
             ? 'border-red-500 focus:border-red-500 focus:ring-red-500/50'
-            : 'border-gray-300 focus:border-primary focus:ring-primary/50',
-          disabled ? 'bg-gray-100 cursor-not-allowed' : 'bg-white'
+            : 'border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-primary/50',
+          disabled ? 'bg-gray-100 dark:bg-gray-700 cursor-not-allowed' : 'bg-white dark:bg-gray-800'
         ]"
         @change="$emit('update:modelValue', ($event.target as HTMLSelectElement).value)"
       >
-        <option v-if="placeholder" value="" disabled>{{ placeholder }}</option>
+        <option v-if="placeholder" value="" disabled class="dark:bg-gray-800">{{ placeholder }}</option>
         <option
           v-for="option in options"
           :key="option.value"
           :value="option.value"
+          class="dark:bg-gray-800"
         >
           {{ option.label }}
         </option>
@@ -66,6 +67,6 @@ defineEmits<{
       </div>
     </div>
     <p v-if="error" class="mt-1 text-sm text-red-500">{{ error }}</p>
-    <p v-else-if="hint" class="mt-1 text-sm text-gray-500">{{ hint }}</p>
+    <p v-else-if="hint" class="mt-1 text-sm text-gray-500 dark:text-gray-400">{{ hint }}</p>
   </div>
 </template>

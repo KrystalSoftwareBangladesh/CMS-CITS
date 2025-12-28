@@ -84,8 +84,8 @@ function editUser(id: string) {
   <div class="space-y-6">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
       <div>
-        <h1 class="text-2xl font-bold text-gray-900">Users</h1>
-        <p class="text-sm text-gray-500">Manage your users and their permissions</p>
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Users</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Manage your users and their permissions</p>
       </div>
       <BaseButton @click="goToCreateUser">
         <Plus class="w-4 h-4 mr-2" />
@@ -102,7 +102,7 @@ function editUser(id: string) {
               v-model="searchQuery"
               type="text"
               placeholder="Search users..."
-              class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+              class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
             />
           </div>
         </div>
@@ -137,7 +137,7 @@ function editUser(id: string) {
               :alt="row.name as string"
               class="w-8 h-8 rounded-full"
             />
-            <span class="font-medium text-gray-900">{{ row.name }}</span>
+            <span class="font-medium text-gray-900 dark:text-white">{{ row.name }}</span>
           </div>
         </template>
         <template #cell-status="{ value }">
@@ -150,14 +150,14 @@ function editUser(id: string) {
             <template #trigger>
               <button
                 type="button"
-                class="p-1 text-gray-400 hover:text-gray-600 rounded"
+                class="p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 rounded"
                 @click.stop
               >
                 <MoreVertical class="w-5 h-5" />
               </button>
             </template>
             <button
-              class="flex items-center gap-2 w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              class="flex items-center gap-2 w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
               @click="editUser(row.id as string)"
             >
               <Eye class="w-4 h-4" />
