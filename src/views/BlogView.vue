@@ -30,8 +30,14 @@ const filteredPosts = computed(() => {
   return posts
 })
 
+const showFeaturedSection = computed(() => activeCategory.value === 'All' && !searchQuery.value)
 const featuredPost = computed(() => blogPosts.find(post => post.featured))
-const regularPosts = computed(() => filteredPosts.value.filter(post => !post.featured))
+const regularPosts = computed(() => {
+  if (showFeaturedSection.value) {
+    return filteredPosts.value.filter(post => !post.featured)
+  }
+  return filteredPosts.value
+})
 </script>
 
 <template>
@@ -74,7 +80,7 @@ const regularPosts = computed(() => filteredPosts.value.filter(post => !post.fea
         </div>
       </section>
 
-      <section v-if="featuredPost && activeCategory === 'All' && !searchQuery" class="pb-12">
+      <section v-if="featuredPost && showFeaturedSection" class="pb-12">
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Featured Article</h2>
         <BlogCard
           :slug="featuredPost.slug"
