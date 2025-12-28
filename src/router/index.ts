@@ -84,6 +84,22 @@ const router = createRouter({
       },
     },
     {
+      path: '/blog',
+      name: 'blog',
+      component: () => import('../views/BlogView.vue'),
+      meta: {
+        title: 'Blog | CMS',
+      },
+    },
+    {
+      path: '/blog/:slug',
+      name: 'blog-detail',
+      component: () => import('../views/BlogDetailView.vue'),
+      meta: {
+        title: 'Blog | CMS',
+      },
+    },
+    {
       path: '/privacy-policy',
       name: 'privacy-policy',
       component: () => import('../views/PrivacyPolicyView.vue'),
