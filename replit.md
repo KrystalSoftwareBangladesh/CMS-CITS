@@ -29,7 +29,7 @@ Preferred communication style: Simple, everyday language.
 
 ### Routing
 - **Vue Router**: File-based route organization with lazy-loaded components
-- Public routes: home, about, team, services, pricing, contact
+- Public routes: home, about, team, services, pricing, blog, career, contact
 - Admin routes: dashboard, users, roles, permissions, content management
 - Route meta includes page titles
 
